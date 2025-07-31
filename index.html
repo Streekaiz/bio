@@ -107,7 +107,6 @@
          border-radius: 0.75rem;
          box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.4), 0 8px 10px -4px rgba(0, 0, 0, 0.3);
          margin-right: 0;
-         width: 250px;
          margin-top: 20px;
          position: relative;
          margin-left: 0;
@@ -117,11 +116,13 @@
          .forums-section {
          margin-left: 40px;
          }
+         .main-content,
          .gif-section {
-         margin-top: 30px;
-         /* Make it a perfect square and similar size to .main-content */
          width: 100%;
          max-width: 28rem; /* 448px */
+         }
+         .gif-section {
+         margin-top: 30px;
          aspect-ratio: 1 / 1;
          height: auto;
          display: flex;
@@ -477,6 +478,13 @@
          vertical-align: middle;
          }
          @media (max-width: 768px) {
+         .main-content,
+         .gif-section,
+         .discord-section,
+         .forums-section {
+         width: 90%;
+         max-width: 350px;
+         }
          .container {
          flex-direction: column;
          align-items: center;
@@ -508,18 +516,19 @@
          }
          }
          @media (max-width: 480px) {
+         .main-content,
+         .gif-section,
+         .discord-section,
+         .forums-section {
+         width: 95%;
+         max-width: 95vw;
+         }
          #click-to-enter-text {
          font-size: 1.5rem;
          }
          .discord-pfp {
          width: 70px;
          height: 70px;
-         }
-         .discord-section, .forums-section, .gif-section {
-         width: 95%;
-         }
-         .main-content {
-         width: 95%;
          }
          }
       </style>
