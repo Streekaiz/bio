@@ -97,7 +97,7 @@
          margin-bottom: 12px;
          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.3);
          }
-         .discord-section, .forums-section, .gif-section {
+         .discord-section, .forums-section {
          display: flex;
          flex-direction: column;
          align-items: center;
@@ -106,38 +106,11 @@
          background-color: rgba(0, 0, 0, 0.144);
          border-radius: 0.75rem;
          box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.4), 0 8px 10px -4px rgba(0, 0, 0, 0.3);
-         margin-right: 0;
          width: 250px;
-         margin-top: 20px;
          position: relative;
-         margin-left: 0;
          backdrop-filter: blur(10px);
          border: 1px solid rgba(255, 255, 255, 0.1);
-         }
-         .forums-section {
-         margin-left: 40px;
-         }
-         .gif-section {
-         margin-top: 30px;
-         width: 448px;
-         height: auto;
-         max-width: 28rem;
-         }
-         .gif-container {
-         width: 100%;
-         height: 416px;
-         border-radius: 0.5rem;
-         overflow: hidden;
-         background-color: rgba(255, 255, 255, 0.05);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         }
-         .gif-container img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         border-radius: 0.5rem;
+         flex-shrink: 0;
          }
          .discord-name-global {
          font-size: 1.1rem;
@@ -151,33 +124,30 @@
          opacity: 0.8;
          }
          .main-content {
-         flex: 1;
-         width: 100%;
          display: flex;
          flex-direction: column;
          align-items: center;
+         padding: 16px;
+         text-align: center;
+         background-color: rgba(0, 0, 0, 0.144);
+         border-radius: 0.75rem;
+         box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.4), 0 8px 10px -4px rgba(0, 0, 0, 0.3);
+         width: 250px;
+         position: relative;
+         backdrop-filter: blur(10px);
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         flex-shrink: 0;
          }
          .container {
          display: flex;
-         flex-direction: column;
+         flex-direction: row;
          justify-content: center;
          align-items: center;
          padding: 20px;
          width: 100%;
          box-sizing: border-box;
          max-width: 100%;
-         gap: 20px;
-         }
-         .top-row {
-         display: flex;
-         flex-direction: row;
-         justify-content: center;
-         align-items: flex-start;
          gap: 40px;
-         margin-top: -30px;
-         }
-         .middle-section {
-         margin-top: 10px;
          }
          #audio-visualizer {
          width: 100%;
@@ -282,13 +252,12 @@
          border-radius: 0.75rem;
          box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.4), 0 8px 10px -4px rgba(0, 0, 0, 0.3);
          margin-right: 0;
-         width: 448px;
+         width: 250px;
          margin-top: 20px;
          position: relative;
          margin-left: 0;
          backdrop-filter: blur(10px);
          border: 1px solid rgba(255, 255, 255, 0.1);
-         max-width: 28rem;
          }
          .rounded-lg {
          border-radius: 0.75rem;
@@ -453,13 +422,6 @@
          margin-bottom: 12px;
          text-align: center;
          }
-         .gif-section h3 {
-         font-size: 1.1rem;
-         font-weight: 600;
-         color: #e2e8f0;
-         margin-bottom: 12px;
-         text-align: center;
-         }
          .x64-logo {
          width: 16px;
          height: 16px;
@@ -471,38 +433,16 @@
          flex-direction: column;
          align-items: center;
          }
-         .top-row {
-         flex-direction: column;
-         gap: 20px;
-         margin-top: 0;
-         }
-         .discord-section, .forums-section, .gif-section {
+         .discord-section, .forums-section, .main-content {
          margin-left: 0;
          margin-right: 0;
          width: 90%;
          max-width: 350px;
-         }
-         .main-content {
-         width: 90%;
-         max-width: 350px;
-         }
-         .bg-white {
-         width: 90%;
-         max-width: 350px;
-         }
-         .gif-section {
-         width: 90%;
-         max-width: 350px;
-         }
-         .gif-container {
-         height: 300px;
+         margin-bottom: 20px;
          }
          .profile-picture {
          width: 100px;
          height: 100px;
-         }
-         .forums-section {
-         margin-top: 20px;
          }
          }
          @media (max-width: 480px) {
@@ -513,20 +453,8 @@
          width: 70px;
          height: 70px;
          }
-         .discord-section, .forums-section, .gif-section {
+         .discord-section, .forums-section, .main-content {
          width: 95%;
-         }
-         .main-content {
-         width: 95%;
-         }
-         .bg-white {
-         width: 95%;
-         }
-         .gif-section {
-         width: 95%;
-         }
-         .gif-container {
-         height: 250px;
          }
          }
       </style>
@@ -537,72 +465,65 @@
       </div>
       <audio id="background-music" src="bossa uh.mp3" loop preload="auto"></audio>
       <div class="container">
-         <div class="top-row">
-            <div id="discord-status" class="discord-section">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/A_black_image.jpg" alt="Discord PFP" class="discord-pfp">
-               <div class="discord-name-global">Loading...</div>
-               <div class="discord-name-user"></div>
-               <div class="mt-2 flex items-center justify-content-center discord-status-container">
-                  <span class="status-circle offline"></span>
-                  <span class="status-text">Offline</span>
-               </div>
-               <div class="activities-container">
-               </div>
+         <div id="discord-status" class="discord-section">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/A_black_image.jpg" alt="Discord PFP" class="discord-pfp">
+            <div class="discord-name-global">Loading...</div>
+            <div class="discord-name-user"></div>
+            <div class="mt-2 flex items-center justify-content-center discord-status-container">
+               <span class="status-circle offline"></span>
+               <span class="status-text">Offline</span>
             </div>
-            <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md main-content middle-section">
-               <div class="text-center mb-6">
-                  <img src="https://files.catbox.moe/bgpdk0.jpg" alt="Profile Picture" class="profile-picture mx-auto mb-4">
-                  <h1 class="text-2xl font-semibold text-white sparkle-container" id="sparkle-text">
-                     starrzzyy
-                  </h1>
-                  <p class="text-white-600 mb-2">
-                     @streekaiz
-                  </p>
-                  <p class="text-white text-sm" style="margin-bottom: 0.5rem;">I'm usually quiet, don't think too much about it!</p>
-                  <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
-                   <i class="fas fa-clock" style="font-size: 0.75rem;"></i>
-                   <span style="margin-left: 4px;">Pacific Time Zone : <span id="pacific-time">00:00</span></span>
-                  </p>
-                  <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
-                  <i class="fas fa-birthday-cake" style="font-size: 0.75rem;"></i>
-                   <span style="margin-left: 4px;">9/27</span>
-                  </p>
-                  <p class="text-white text-sm">
-                     <i class="fas fa-map-pin" style="font-size: 0.75rem;"></i>
-                     <span style="margin-left: 4px;">Los Angeles, CA</span>
-                  </p>
-               </div>
-            </div>
-            <div class="forums-section">
-      <h3>Socials</h3>
-      <ul>
-         <li>
-            <img class="x64-logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
-            <a href="https://github.com/Streekaiz">Github</a>
-         </li>
-         <li>
-            <img class="x64-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube Logo">
-            <a href="https://youtube.com/@streek4824?">YouTube</a>
-         </li>
-         <li>
-            <img class="x64-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png" alt="BSky Logo">
-            <a href="https://bsky.app/profile/starryyzz.bsky.social">Bluesky</a>
-         </li>
-         <li>
-            <img class="x64-logo" src="https://img.icons8.com/?size=100&id=30998&format=png&color=000000" alt="Discord Logo">
-            <a href="https://discordapp.com/users/799382775333126155">Discord</a>
-         </li>
-         <li>
-            <img class="x64-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Roblox_Logo.svg" alt="Roblox Logo">
-            <a href="https://www.roblox.com/users/4012807793">Roblox</a>
-         </li>
-      </ul>
+            <div class="activities-container">
             </div>
          </div>
-         <div class="gif-section">
-            <div class="gif-container">
-               <img src="IRIS_SUPREMACY.gif" alt="IRIS SUPREMACY GIF" />
+         <div class="main-content">
+            <div class="text-center mb-6">
+               <img src="https://files.catbox.moe/bgpdk0.jpg" alt="Profile Picture" class="profile-picture mx-auto mb-4">
+               <h1 class="text-2xl font-semibold text-white sparkle-container" id="sparkle-text">
+                  starrzzyy
+               </h1>
+               <p class="text-white-600 mb-2">
+                  @streekaiz
+               </p>
+               <p class="text-white text-sm" style="margin-bottom: 0.5rem;">I'm usually quiet, don't think too much about it!</p>
+               <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
+                <i class="fas fa-clock" style="font-size: 0.75rem;"></i>
+                <span style="margin-left: 4px;">Pacific Time Zone : <span id="pacific-time">00:00</span></span>
+               </p>
+               <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
+               <i class="fas fa-birthday-cake" style="font-size: 0.75rem;"></i>
+                <span style="margin-left: 4px;">9/27</span>
+               </p>
+               <p class="text-white text-sm">
+                  <i class="fas fa-map-pin" style="font-size: 0.75rem;"></i>
+                  <span style="margin-left: 4px;">Los Angeles, CA</span>
+               </p>
             </div>
+         </div>
+         <div class="forums-section">
+   <h3>Socials</h3>
+   <ul>
+      <li>
+         <img class="x64-logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+         <a href="https://github.com/Streekaiz">Github</a>
+      </li>
+      <li>
+         <img class="x64-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube Logo">
+         <a href="https://youtube.com/@streek4824?">YouTube</a>
+      </li>
+      <li>
+         <img class="x64-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png" alt="BSky Logo">
+         <a href="https://bsky.app/profile/starryyzz.bsky.social">Bluesky</a>
+      </li>
+      <li>
+         <img class="x64-logo" src="https://img.icons8.com/?size=100&id=30998&format=png&color=000000" alt="Discord Logo">
+         <a href="https://discordapp.com/users/799382775333126155">Discord</a>
+      </li>
+      <li>
+         <img class="x64-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Roblox_Logo.svg" alt="Roblox Logo">
+         <a href="https://www.roblox.com/users/4012807793">Roblox</a>
+      </li>
+   </ul>
          </div>
       </div>
       <script>
