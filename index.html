@@ -119,23 +119,33 @@
          margin-left: 40px;
          }
          .gif-section {
-           width: 100%;
-           max-width: 448px; /* Match the main card */
-           margin: 30px auto 0 auto;
-           display: flex;
-           justify-content: center;
+            width: 100%;
+            max-width: 448px; /* Match the main card */
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
          }
          
          .gif-container {
-           width: 100%;
-           border-radius: 12px;
-           overflow: hidden;
-           box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
          }
          .gif-container img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
+         max-width: 100%;
+         max-height: 350px;
+         width: auto;
+         height: auto;
+         display: block;
+         margin: 0 auto;
+         object-fit: contain;
          border-radius: 0.5rem;
          }
          .discord-name-global {
@@ -528,6 +538,20 @@
          height: 250px;
          }
          }
+         .main-center-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+         }
+         @media (min-width: 900px) {
+            .main-center-row {
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+            }
+         }
       </style>
    </head>
    <body class="bg-gray-100">
@@ -548,28 +572,36 @@
                <div class="activities-container">
                </div>
             </div>
-            <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md main-content middle-section">
-               <div class="text-center mb-6">
-                  <img src="https://files.catbox.moe/bgpdk0.jpg" alt="Profile Picture" class="profile-picture mx-auto mb-4">
-                  <h1 class="text-2xl font-semibold text-white sparkle-container" id="sparkle-text">
-                     starrzzyy
-                  </h1>
-                  <p class="text-white-600 mb-2">
-                     @streekaiz
-                  </p>
-                  <p class="text-white text-sm" style="margin-bottom: 0.5rem;">I'm usually quiet, don't think too much about it!</p>
-                  <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
-                   <i class="fas fa-clock" style="font-size: 0.75rem;"></i>
-                   <span style="margin-left: 4px;">Pacific Time Zone : <span id="pacific-time">00:00</span></span>
-                  </p>
-                  <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
-                  <i class="fas fa-birthday-cake" style="font-size: 0.75rem;"></i>
-                   <span style="margin-left: 4px;">9/27</span>
-                  </p>
-                  <p class="text-white text-sm">
-                     <i class="fas fa-map-pin" style="font-size: 0.75rem;"></i>
-                     <span style="margin-left: 4px;">Los Angeles, CA</span>
-                  </p>
+            <!-- Wrap main-content and gif-section in a new flex container -->
+            <div class="main-center-row">
+               <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md main-content middle-section">
+                  <div class="text-center mb-6">
+                     <img src="https://files.catbox.moe/bgpdk0.jpg" alt="Profile Picture" class="profile-picture mx-auto mb-4">
+                     <h1 class="text-2xl font-semibold text-white sparkle-container" id="sparkle-text">
+                        starrzzyy
+                     </h1>
+                     <p class="text-white-600 mb-2">
+                        @streekaiz
+                     </p>
+                     <p class="text-white text-sm" style="margin-bottom: 0.5rem;">I'm usually quiet, don't think too much about it!</p>
+                     <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
+                      <i class="fas fa-clock" style="font-size: 0.75rem;"></i>
+                      <span style="margin-left: 4px;">Pacific Time Zone : <span id="pacific-time">00:00</span></span>
+                     </p>
+                     <p class="text-white text-sm" style="margin-bottom: 0.5rem;">
+                     <i class="fas fa-birthday-cake" style="font-size: 0.75rem;"></i>
+                      <span style="margin-left: 4px;">9/27</span>
+                     </p>
+                     <p class="text-white text-sm">
+                        <i class="fas fa-map-pin" style="font-size: 0.75rem;"></i>
+                        <span style="margin-left: 4px;">Los Angeles, CA</span>
+                     </p>
+                  </div>
+               </div>
+               <div class="gif-section">
+                  <div class="gif-container">
+                     <img src="IRIS_SUPREMACY.gif" alt="IRIS SUPREMACY GIF" />
+                  </div>
                </div>
             </div>
             <div class="forums-section">
@@ -596,11 +628,6 @@
             <a href="https://www.roblox.com/users/4012807793">Roblox</a>
          </li>
       </ul>
-            </div>
-         </div>
-         <div class="gif-section">
-            <div class="gif-container">
-               <img src="IRIS_SUPREMACY.gif" alt="IRIS SUPREMACY GIF" />
             </div>
          </div>
       </div>
